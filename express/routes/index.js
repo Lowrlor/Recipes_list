@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const multer  = require('multer')
-
+const fs = require('fs');
 const controller = require('../controllers/controller.js');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    fs.mkdirSync('./public/images', { recursive: true })
     cb(null, './public/images')
   },
   filename: function (req, file, cb) {

@@ -66,24 +66,6 @@ exports.removeAll = function (req, res) {
     })
 }
 exports.update = function (req, res) {
-  // if (req.body.img) {
-  //   var update = {
-  //     img: req.body.img,
-  //     title: req.body.title,
-  //     type: req.body.type,
-  //     products: req.body.products,
-  //     time: req.body.time,
-  //     description: req.body.description
-  //   }
-  // } else {
-  //   var update = {
-  //     title: req.body.title,
-  //     type: req.body.type,
-  //     products: req.body.products,
-  //     time: req.body.time,
-  //     description: req.body.description
-  //   }
-  // }
   if (req.body.img.length < 1) {
     req.body.img = undefined
   }

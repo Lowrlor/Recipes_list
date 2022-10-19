@@ -28,7 +28,9 @@ const listSchema = new Schema({
   }
 })
 listSchema.pre('save', function(next) {
-  this.products = this.products[0].split(',')
+  if (this.products[0].split(',')) {
+    this.products = this.products[0].split(',')
+  }
   next()
 });
 module.exports = mongoose.model("List", listSchema)

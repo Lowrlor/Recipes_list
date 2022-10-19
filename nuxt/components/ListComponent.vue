@@ -5,7 +5,7 @@
       v-btn(v-if='editable' @click='removeAll' color='red') RemoveAll
     v-col(cols="12" align-center )
       v-row(justify="center" no-gutters)
-        p(v-if='items.length < 0' style='margin-top: 125px; font-size: 56px; color: black; opacity: 0.3') Empty
+        p(v-if='items.length <= 0' style='margin-top: 125px; font-size: 56px; color: black; opacity: 0.3') Empty
         v-card(width="300px" v-else class="ma-3 pa-6" outlined tile v-for='item, index in items' :key='item._id' style='margin-left: 15px')
           template(v-if='!edit.isEditing || edit.index != index')
             v-img(:src="'http://localhost:3001/images/' + item.img" height="200px")
